@@ -1,4 +1,4 @@
-# Here is your missions should you choose to accept
+# Here is your missions should you choose to accepted
 
 - Change buttons to add/subtract by 2
 - Add check(s) to ensure number is not negative
