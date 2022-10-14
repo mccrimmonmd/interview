@@ -5,17 +5,17 @@ import './App.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {current: 0};
+    this.state = {num: 0};
   }
 
   increment = () => {
     this.setState((prevState, _) => ({
-      current: prevState.current + 1
+      num: prevState.num + 1
     }));
   }
   decrement = () => {
     this.setState((prevState, _) => ({
-      current: prevState.current - 1
+      num: prevState.num - 1
     }));
   }
 
@@ -25,7 +25,7 @@ class App extends React.Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <div>
-            {this.state.current}&nbsp;
+            {this.state.num}&nbsp;
             <button onClick={this.increment}>+</button>
             <button onClick={this.decrement}>-</button>
           </div>
