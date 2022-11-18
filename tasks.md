@@ -11,7 +11,7 @@
 - Pass starting value in through App's props
 - Make number directly editable
   - Add check(s) to ensure value is an integer
-- Convert App component from class-based to functional w/hooks
+- Convert App component from class-based to functional w/hooks (or vice-versa)
 
 ## Advanced
 
