@@ -1,19 +1,23 @@
 const fs = require("fs")
 const process = require("process")
 
-fs.readFile("Jabberwocky.txt", (err, data) => {
-  if (err) {
+const jabberwocky = (filePath='Jabberwocky.txt') => {
+  try {
+    let data = fs.readFileSync(filePath)
+    if (data) {
+      return data.toString().trim() //trim() removes BOM
+    } else {
+      console.log("No data!")
+      return ''
+    }
+  } catch (err) {
     console.log(err)
     throw err
   }
-  else if (data) masticate(data.toString().trim()) //trim() removes BOM
-  else {
-    console.log("No data!")
-    process.exit()
-  }
-})
+}
 
 const masticate = (text) => {
+  if (text == null) text = jabberwocky()
   console.log(charCounts(text))
   console.log(charCountsFunc(text))
   console.log("--------------------------------------------")
@@ -77,4 +81,15 @@ const wordCountsFunc = (text) => {
     }
     return counts
   }, {})
+}
+
+if (false) { // DEBUG
+  masticate()
+}
+
+module.exports = {
+  jabberwocky,
+  masticate,
+  charCounts: charCountsFunc,
+  wordCounts: wordCountsFunc,
 }
